@@ -1,0 +1,38 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #4A2C2A; min-height: 100vh; }
+
+.reg-page { background: url('images/background.jpg') no-repeat center center fixed; background-size: cover; }
+.login-page { background: url('images/background1.jpg') no-repeat center center fixed; background-size: cover; }
+
+.auth-container { display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+.auth-card { 
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(15px); 
+    padding: 50px; border-radius: 15px; 
+    width: 100%; max-width: 550px; text-align: center; 
+}
+
+/* ERROR MESSAGE STYLING */
+.error-msg {
+    color: #d9534f; /* Terracotta Red */
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 5px;
+    display: none; /* JS will change this to block */
+    text-align: left;
+}
+
+/* This adds the red border to input boxes */
+input.invalid, select.invalid {
+    border: 1px solid #d9534f !important;
+    background-color: #fff2f2 !important;
+}
+
+/* Button & Form UI */
+.input-group { text-align: left; margin-bottom: 15px; }
+label { display: block; font-size: 10px; font-weight: 700; margin-bottom: 5px; letter-spacing: 1px; color: #555; }
+input, select { width: 100%; padding: 12px; border: none; background: #F8F6F1; border-radius: 5px; }
+.flex-row { display: flex; gap: 15px; }
+.flex-row .input-group { flex: 1; }
+.btn-auth { width: 100%; padding: 15px; background-color: #A65737; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 20px; }
+.switch-auth a { color: #6B2E1E; font-weight: 700; text-decoration: none; }
