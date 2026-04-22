@@ -1,10 +1,27 @@
 <?php
 session_start();
 
+// --- CENTRAL ROUTER ---
+// This block intercepts URLs and routes them to the correct Controller
+if (isset($_GET['controller']) && isset($_GET['action'])) {
+    $controllerName = ucfirst($_GET['controller']) . 'Controller';
+    $actionName = $_GET['action'];
+    
+    $controllerFile = 'controllers/' . $controllerName . '.php';
+    if (file_exists($controllerFile)) {
+        require_once $controllerFile;
+        $controller = new $controllerName();
+        if (method_exists($controller, $actionName)) {
+            $controller->$actionName();
+            exit(); // Stop loading the rest of the page if a controller handles the request
+        }
+    }
+}
+
 // Check if the user is actually logged in. 
-// If they aren't, send them back to the login page.
+// If they aren't, send them back to the login page inside the views folder.
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: views/login.php");
     exit();
 }
 ?>
@@ -23,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="logo">Artisan Hearth</div>
         <nav>
             <span style="font-size: 14px; margin-right: 20px;">Welcome, <strong><?php echo $_SESSION['user_name']; ?></strong> (<?php echo $_SESSION['role']; ?>)</span>
-            <a href="logout.php" style="color: #A65737; font-weight: 700; text-decoration: none; font-size: 14px;">LOGOUT</a>
+            <a href="index.php?controller=auth&action=logout" style="color: #A65737; font-weight: 700; text-decoration: none; font-size: 14px;">LOGOUT</a>
         </nav>
     </header>
 

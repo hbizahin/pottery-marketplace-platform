@@ -17,7 +17,7 @@
             <h1>Create Account</h1>
             
             <!-- Added id="registrationForm" and novalidate -->
-            <form action="register_handler.php" method="POST" id="registrationForm" novalidate>
+            <form action="../index.php?controller=auth&action=register" method="POST" id="registrationForm" novalidate>
                 <div class="input-group">
                     <label>FULL NAME</label>
                     <input type="text" name="name" id="regName" placeholder="E.g. Julian Vases">

@@ -16,7 +16,7 @@
             <h1>Welcome Back</h1>
             <p class="tagline">SIGN IN TO YOUR STUDIO ACCOUNT</p>
 
-            <form action="login_handler.php" method="POST" id="loginForm" novalidate>
+            <form action="../index.php?controller=auth&action=login" method="POST" id="loginForm" novalidate>
                 <div class="input-group">
                     <label>EMAIL ADDRESS</label>
                     <input type="email" name="email" id="loginEmail" placeholder="artisan@hearth.com">
