@@ -28,10 +28,12 @@ class AuthController
                 $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['user_name'] = $user['name'];
                 $_SESSION['role'] = $user['role'];
-                header("Location: ../index.php");
+                // FIXED PATH:
+                header("Location: index.php");
                 exit();
             } else {
-                echo "<script>alert('Incorrect email or password.'); window.location.href='../views/login.php';</script>";
+                // FIXED PATH:
+                echo "<script>alert('Incorrect email or password.'); window.location.href='views/login.php';</script>";
             }
         }
     }
@@ -54,11 +56,13 @@ class AuthController
 
             try {
                 if ($this->userModel->createUser($name, $email, $hashed_password, $role, $phone, $address)) {
-                    echo "<script>alert('Registration Successful!'); window.location.href='../views/login.php';</script>";
+                    // FIXED PATH:
+                    echo "<script>alert('Registration Successful!'); window.location.href='views/login.php';</script>";
                 }
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {
-                    echo "<script>alert('Error: This email is already registered.'); window.location.href='../views/register.php';</script>";
+                    // FIXED PATH:
+                    echo "<script>alert('Error: This email is already registered.'); window.location.href='views/register.php';</script>";
                 } else {
                     echo "Error: " . $e->getMessage();
                 }
@@ -70,7 +74,8 @@ class AuthController
     {
         session_unset();
         session_destroy();
-        header("Location: ../views/login.php");
+        // FIXED PATH:
+        header("Location: views/login.php");
         exit();
     }
 }
