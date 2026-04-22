@@ -19,7 +19,7 @@ class CartController
         global $conn;
         $this->conn = $conn;
         $this->cartModel = new Cart();
-        $this->productModel = new Product();
+        $this->productModel = new Product($this->conn);
     }
 
     public function index()
