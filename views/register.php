@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Account - Artisan Hearth</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Path updated to look up one level for CSS -->
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="reg-page">
+<body class="reg-page"> <!-- Pulls background.jpg from style.css -->
     <header class="navbar">
         <div class="logo">Artisan Hearth</div>
     </header>
@@ -16,7 +17,7 @@
             <p class="tagline">JOIN OUR HEARTH</p>
             <h1>Create Account</h1>
             
-            <!-- Added id="registrationForm" and novalidate -->
+            <!-- Action updated to point to the Central Router -->
             <form action="../index.php?controller=auth&action=register" method="POST" id="registrationForm" novalidate>
                 <div class="input-group">
                     <label>FULL NAME</label>
@@ -51,7 +52,6 @@
                         <input type="password" id="confirmPassword" placeholder="........">
                     </div>
                 </div>
-                <!-- This span MUST have id="passError" -->
                 <span class="error-msg" id="passError"></span>
 
                 <button type="submit" class="btn-auth">SIGN UP</button>
@@ -59,7 +59,8 @@
             <p class="switch-auth">Already part of our community? <a href="login.php">Login</a></p>
         </div>
     </main>
-    <!-- Script link at the bottom -->
-    <script src="script.js"></script>
+
+    <!-- Path updated to look up one level for JS -->
+    <script src="../script.js"></script>
 </body>
 </html>
