@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="login-page"> 
+<body class="login-page">
     <header class="navbar">
         <div class="logo">Artisan Hearth</div>
     </header>
@@ -15,7 +15,6 @@
         <div class="auth-card">
             <h1>Welcome Back</h1>
             <p class="tagline">SIGN IN TO YOUR STUDIO ACCOUNT</p>
-
             <form action="../index.php?controller=auth&action=login" method="POST" id="loginForm" novalidate>
                 <div class="input-group">
                     <label>EMAIL ADDRESS</label>

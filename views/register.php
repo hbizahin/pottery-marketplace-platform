@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Account - Artisan Hearth</title>
-    <!-- Path updated to look up one level for CSS -->
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="reg-page"> <!-- Pulls background.jpg from style.css -->
+<body class="reg-page">
     <header class="navbar">
         <div class="logo">Artisan Hearth</div>
     </header>
@@ -17,7 +16,6 @@
             <p class="tagline">JOIN OUR HEARTH</p>
             <h1>Create Account</h1>
             
-            <!-- Action updated to point to the Central Router -->
             <form action="../index.php?controller=auth&action=register" method="POST" id="registrationForm" novalidate>
                 <div class="input-group">
                     <label>FULL NAME</label>
@@ -59,8 +57,6 @@
             <p class="switch-auth">Already part of our community? <a href="login.php">Login</a></p>
         </div>
     </main>
-
-    <!-- Path updated to look up one level for JS -->
     <script src="../script.js"></script>
 </body>
 </html>
