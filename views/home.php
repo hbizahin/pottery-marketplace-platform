@@ -67,7 +67,7 @@
       
       <div class="flex-1 relative w-full aspect-[4/5] md:aspect-auto md:h-[600px]">
         <img 
-          src="images/artist_image.jpeg" 
+          src="../images/artist_image.jpeg" 
           alt="" 
           class="w-full h-full object-cover rounded-xl"
         />
@@ -106,7 +106,7 @@
         <div class="flex flex-col gap-6 h-[800px]">
            <div class="relative flex-1 rounded-xl overflow-hidden group">
             <img 
-              src="images/pottery_items.jpeg" 
+              src="../images/pottery_items.jpeg" 
               alt="" 
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -117,7 +117,7 @@
           </div>
           <div class="relative flex-1 rounded-xl overflow-hidden group">
             <img 
-              src="images/pottery_tools.jpeg" 
+              src="../images/pottery_tools.jpeg" 
               alt="Tools" 
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%]"
             />
@@ -226,7 +226,7 @@
         <div class="flex-1 relative">
           <div class="aspect-square rounded-full overflow-hidden shadow-2xl relative">
             <img 
-              src="images/workshop_banner.jpeg" 
+              src="../images/workshop_banner.jpeg" 
               alt="" 
               class="w-full h-full object-cover"
             />
