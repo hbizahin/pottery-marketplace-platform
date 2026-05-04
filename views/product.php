@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artisan Hearth - Products</title>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,24 +22,23 @@
   </script>
 </head>
 <body class="min-h-screen bg-[#F0EBE1] font-sans text-[#2c2826] overflow-x-hidden flex flex-col">
-
   <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full border-b border-[#2c2826]/10 shrink-0">
-    <a href="index.html" class="text-2xl font-serif font-semibold text-[#8B3E2F]">
+    <a href="../index.php" class="text-2xl font-serif font-semibold text-[#8B3E2F]">
       Artisan Hearth
     </a>
     <div class="hidden md:flex gap-8 text-xs font-semibold tracking-widest text-[#6e685f]">
-      <a href="products.html" class="hover:text-[#2c2826] transition-colors">PRODUCTS</a>
-      <a href="#" class="hover:text-[#2c2826] transition-colors">TOOLS</a>
-      <a href="#" class="hover:text-[#2c2826] transition-colors">ARTISTS</a>
-      <a href="#" class="hover:text-[#2c2826] transition-colors">WORKSHOPS</a>
+      <a href="../index.php?controller=product&action=index" class="hover:text-[#2c2826] transition-colors">PRODUCTS</a>
+      <a href="../index.php?controller=tool&action=index" class="hover:text-[#2c2826] transition-colors">TOOLS</a>
+      <a href="../index.php?controller=artist&action=index" class="hover:text-[#2c2826] transition-colors">ARTISTS</a>
+      <a href="../index.php?controller=course&action=index" class="hover:text-[#2c2826] transition-colors">WORKSHOPS</a>
     </div>
     <div class="flex gap-4 text-[#8B3E2F]">
-      <button class="hover:opacity-75 transition-opacity">
+      <a href="../index.php?controller=user&action=profile" class="hover:opacity-75 transition-opacity">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-      </button>
-      <button class="hover:opacity-75 transition-opacity">
+      </a>
+      <a href="../index.php?controller=cart&action=index" class="hover:opacity-75 transition-opacity">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-      </button>
+      </a>
     </div>
   </nav>
 
@@ -189,7 +186,7 @@
         </p>
         <div class="flex gap-4 text-[#A44322]">
           <a href="#" class="hover:opacity-75 transition-opacity">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></path></svg>
           </a>
           <a href="#" class="hover:opacity-75 transition-opacity">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -202,9 +199,9 @@
 
       <div class="md:col-span-1 flex flex-col gap-4 pl-0 md:pl-8">
         <h5 class="text-xs font-bold tracking-widest uppercase text-[#1a1817] mb-2">Explore</h5>
-        <a href="products.html" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Our Collection</a>
+        <a href="../index.php?controller=product&action=index" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Our Collection</a>
         <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">About Our Clay</a>
-        <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Featured Artists</a>
+        <a href="../index.php?controller=artist&action=index" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Featured Artists</a>
         <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Exhibitions</a>
       </div>
 
@@ -223,19 +220,20 @@
          </p>
          <form class="flex mt-2">
            <input 
-              type="email" 
-              placeholder="Email Address" 
-              class="bg-white px-4 py-2 text-sm max-w-[160px] outline-none text-[#2c2826] placeholder-[#a9a49c]"
+               type="email" 
+               placeholder="Email Address" 
+               class="bg-white px-4 py-2 text-sm max-w-[160px] outline-none text-[#2c2826] placeholder-[#a9a49c]"
             />
            <button type="submit" class="bg-[#A44322] hover:bg-[#8e3a1d] text-white px-4 py-2 text-sm font-semibold transition-colors shrink-0">
              JOIN
            </button>
          </form>
       </div>
+
     </div>
     
     <div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-[#2c2826]/10 text-center text-xs text-[#a9a49c]">
-      © 2024 Artisan Hearth. Formed by hand, fired with intent.
+        © 2024 Artisan Hearth. Formed by hand, fired with intent.
     </div>
   </footer>
 </body>
