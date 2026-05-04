@@ -26,11 +26,11 @@
 <body class="min-h-screen bg-[#F0EBE1] font-sans text-[#2c2826] overflow-x-hidden flex flex-col">
 
   <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full border-b border-[#2c2826]/10 shrink-0">
-    <a href="index.html" class="text-2xl font-serif font-semibold text-[#8B3E2F]">
+    <a href="home.php" class="text-2xl font-serif font-semibold text-[#8B3E2F]">
       Artisan Hearth
     </a>
     <div class="hidden md:flex gap-8 text-xs font-semibold tracking-widest text-[#6e685f]">
-      <a href="products.html" class="hover:text-[#2c2826] transition-colors">PRODUCTS</a>
+      <a href="product.php" class="hover:text-[#2c2826] transition-colors">PRODUCTS</a>
       <a href="#" class="hover:text-[#2c2826] transition-colors">TOOLS</a>
       <a href="#" class="hover:text-[#2c2826] transition-colors">ARTISTS</a>
       <a href="#" class="hover:text-[#2c2826] transition-colors">WORKSHOPS</a>
@@ -56,7 +56,7 @@
           Handcrafted for <br/> your home, <span class="italic">fired <br/> with intent.</span>
         </h1>
         <div class="flex items-center gap-6">
-          <a href="products.html" class="bg-[#A44322] hover:bg-[#8e3a1d] text-white px-8 py-4 rounded font-medium transition-colors">
+          <a href="product.php" class="bg-[#A44322] hover:bg-[#8e3a1d] text-white px-8 py-4 rounded font-medium transition-colors">
             Shop the Collection
           </a>
           <button class="font-medium text-[#A44322] border-b border-[#A44322] pb-1 hover:opacity-75 transition-opacity">
@@ -111,7 +111,7 @@
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
-              <a href="products.html"><h3 class="text-white font-serif text-3xl mb-1 hover:opacity-80 transition-opacity">Decorative Art</h3></a>
+              <a href="product.php"><h3 class="text-white font-serif text-3xl mb-1 hover:opacity-80 transition-opacity">Decorative Art</h3></a>
               <p class="text-white/80 text-xs tracking-widest uppercase font-semibold">Statement Sculptures</p>
             </div>
           </div>
@@ -266,7 +266,7 @@
 
       <div class="md:col-span-1 flex flex-col gap-4 pl-0 md:pl-8">
         <h5 class="text-xs font-bold tracking-widest uppercase text-[#1a1817] mb-2">Explore</h5>
-        <a href="products.html" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Our Collection</a>
+        <a href="product.php" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Our Collection</a>
         <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">About Our Clay</a>
         <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Featured Artists</a>
         <a href="#" class="text-sm text-[#6e685f] hover:text-[#2c2826] transition-colors">Exhibitions</a>
