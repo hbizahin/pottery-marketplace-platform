@@ -1,19 +1,20 @@
 <?php
+// ============================================================
+//  config/DBconnect.php
+//  Database connection — used by ALL models and controllers
+//  Change $password if your MySQL has a password set
+// ============================================================
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pottery_marketplace";
+$host     = 'localhost';
+$db       = 'pottery_marketplace';
+$user     = 'root';
+$password = '';            // leave empty if no password on localhost
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $password, $db);
 
-// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Database connection failed: " . $conn->connect_error);
 }
 
-// Optional (for testing only)
-// echo "Connection successful";
-
+$conn->set_charset("utf8mb4");
 ?>
