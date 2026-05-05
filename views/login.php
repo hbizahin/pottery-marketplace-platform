@@ -13,26 +13,30 @@
 
     <main class="auth-container">
         <div class="auth-card">
-            <h1>Welcome Back</h1>
-            <p class="tagline">SIGN IN TO YOUR STUDIO ACCOUNT</p>
-            <form action="../index.php?controller=auth&action=login" method="POST" id="loginForm" novalidate>
+            <p class="tagline">WELCOME BACK</p>
+            <h1>Login</h1>
+
+            <!--
+                FIX 4: form action points to MVC router (index.php at root)
+                was pointing to login_handler.php which no longer exists
+            -->
+            <form action="../index.php?controller=auth&action=login" method="POST">
+
                 <div class="input-group">
                     <label>EMAIL ADDRESS</label>
-                    <input type="email" name="email" id="loginEmail" placeholder="artisan@hearth.com">
-                    <span class="error-msg" id="loginEmailError"></span>
+                    <input type="email" name="email" placeholder="julian@hearth.com" required>
                 </div>
 
                 <div class="input-group">
                     <label>PASSWORD</label>
-                    <input type="password" name="password" id="loginPass" placeholder="••••••••">
-                    <span class="error-msg" id="loginPassError"></span>
+                    <input type="password" name="password" placeholder="........" required>
                 </div>
 
-                <button type="submit" class="btn-auth">LOGIN TO HEARTH</button>
+                <button type="submit" class="btn-auth">LOGIN</button>
             </form>
-            <p class="switch-auth">DON'T HAVE AN ACCOUNT? <a href="register.php">SIGN UP</a></p>
+
+            <p class="switch-auth">New to Artisan Hearth? <a href="register.php">Create Account</a></p>
         </div>
     </main>
-    <script src="../script.js"></script>
 </body>
 </html>
