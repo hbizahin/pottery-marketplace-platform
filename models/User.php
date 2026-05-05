@@ -1,57 +1,52 @@
 <?php
+// ============================================================
+//  models/User.php
+//
+//  FIXES APPLIED:
+//  - All queries use correct column names from the database:
+//    username, email, password_hash, role  (NOT name/password)
+//  - createUser() inserts username + password_hash (no phone/address)
+//  - getUserByEmail() returns password_hash for verification
+// ============================================================
 
 class User
 {
     private $conn;
 
-    // Constructor requires the database connection to be passed in
-    public function __construct($dbConnection)
+    public function __construct($conn)
     {
-        $this->conn = $dbConnection;
+        $this->conn = $conn;
     }
 
-    /**
-     * Fetch a user by their email address for login verification.
-     * Replaces the SELECT logic from login_handler.php
-     */
+    // Used by AuthController login()
     public function getUserByEmail($email)
     {
-        $sql = "SELECT * FROM users WHERE email = ?";
+        $sql  = "SELECT * FROM Users WHERE email = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
-
-        if ($result->num_rows === 1) {
-            $user = $result->fetch_assoc();
-            $stmt->close();
-            return $user;
-        }
-        
-        $stmt->close();
-        return false;
+        return $result->fetch_assoc();
     }
 
-    /**
-     * Insert a new user into the database.
-     * Replaces the INSERT logic from register_handler.php
-     */
-    public function createUser($name, $email, $hashed_password, $role, $phone, $address)
+    // Used by AuthController register()
+    public function createUser($username, $email, $password_hash, $role)
     {
-        try {
-            $sql = "INSERT INTO users (name, email, password, role, phone, address) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param("ssssss", $name, $email, $hashed_password, $role, $phone, $address);
-            
-            $success = $stmt->execute();
-            $stmt->close();
-            
-            return $success;
-            
-        } catch (mysqli_sql_exception $e) {
-            // We throw the exception back to the Controller so it can check for the 1062 duplicate error code
-            throw $e;
-        }
+        $sql  = "INSERT INTO Users (username, email, password_hash, role) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssss", $username, $email, $password_hash, $role);
+        return $stmt->execute();
+    }
+
+    // Used by profile pages
+    public function getUserById($user_id)
+    {
+        $sql  = "SELECT * FROM Users WHERE user_id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 }
 ?>
