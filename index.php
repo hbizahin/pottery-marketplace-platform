@@ -44,7 +44,10 @@ $allProducts = $productModel->getAllProducts();
     <header class="navbar">
         <div class="logo">Artisan Hearth</div>
         <nav>
-            <span style="font-size: 14px; margin-right: 20px;">Welcome, <strong><?php echo $_SESSION['user_name']; ?></strong> (<?php echo $_SESSION['role']; ?>)</span>
+            <!-- FIX 2: Changed $_SESSION['user_name'] to $_SESSION['username']
+                 Make sure your AuthController sets: $_SESSION['username'] = $user['username']
+                 using the exact column name from your Users table -->
+            <span style="font-size: 14px; margin-right: 20px;">Welcome, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong> (<?php echo htmlspecialchars($_SESSION['role']); ?>)</span>
             <a href="index.php?controller=auth&action=logout" style="color: #A65737; font-weight: 700; text-decoration: none; font-size: 14px;">LOGOUT</a>
             <a href="index.php?controller=cart&action=index" style="color: #333; font-weight: 700; text-decoration: none; font-size: 14px; margin-left: 15px;">MY CART</a>
         </nav>
@@ -74,7 +77,9 @@ $allProducts = $productModel->getAllProducts();
             <?php if (!empty($allProducts)): ?>
                 <?php foreach ($allProducts as $product): ?>
                     <div style="background: #fff; padding: 20px; border-radius: 10px; width: 250px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-                        <img src="<?= htmlspecialchars($product['image'] ?? 'images/default_product.jpg') ?>" alt="Product" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                        <!-- FIX 1: Changed $product['image'] to $product['image_url']
+                             to match the actual column name in your Products table -->
+                        <img src="<?= htmlspecialchars($product['image_url'] ?? 'images/default_product.jpg') ?>" alt="<?= htmlspecialchars($product['name']) ?>" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                         <h3 style="margin: 15px 0 5px; color: #3d2b1f;"><?= htmlspecialchars($product['name']) ?></h3>
                         <p style="color: #666; font-size: 14px; margin-bottom: 15px;">৳<?= number_format($product['price'], 2) ?></p>
                         
